@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProAceFx.StructureMap</name>
+    </assembly>
+    <members>
+        <member name="T:ProAceFx.StructureMap.Settings.DefaultSettingsConvention">
+            <summary>
+            Provides a default registration convention for settings classes.
+            </summary>
+        </member>
+        <member name="M:ProAceFx.StructureMap.Settings.DefaultSettingsConvention.Process(System.Type,StructureMap.Configuration.DSL.Registry)">
+            <summary>
+            Processes the specified type.
+            </summary>
+            <param name="type">The type to process.</param>
+            <param name="registry">Registry to configure.</param>
+        </member>
+        <member name="T:ProAceFx.StructureMap.StructureMapServiceLocator">
+            <summary>
+            StructureMap adapater for the <see cref="T:Microsoft.Practices.ServiceLocation.IServiceLocator"/> contract.
+            </summary>
+        </member>
+        <member name="M:ProAceFx.StructureMap.StructureMapServiceLocator.#ctor(StructureMap.IContainer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ProAceFx.StructureMap.StructureMapServiceLocator"/> class.
+            </summary>
+            <param name="container">The underlying StructureMap container.</param>
+        </member>
+        <member name="M:ProAceFx.StructureMap.StructureMapServiceLocator.GetService(System.Type)">
+            <summary>
+            Gets the service object of the specified type.
+            </summary>
+            <returns>
+            A service object of type <paramref name="serviceType"/>.
+                                -or- 
+                            null if there is no service object of type <paramref name="serviceType"/>.
+            </returns>
+            <param name="serviceType">An object that specifies the type of service object to get. 
+                            </param><filterpriority>2</filterpriority>
+        </member>
+        <member name="M:ProAceFx.StructureMap.StructureMapServiceLocator.GetInstance(System.Type)">
+            <summary>
+            Get an instance of the given <paramref name="serviceType"/>.
+            </summary>
+            <param name="serviceType">Type of object requested.</param><exception cref="T:Microsoft.Practices.ServiceLocation.ActivationException">if there is an error resolving
+                        the service instance.</exception>
+            <returns>
+            The requested service instance.
+            </returns>
+        </member>
+        <member name="M:ProAceFx.StructureMap.StructureMapServiceLocator.GetInstance(System.Type,System.String)">
+            <summary>
+            Get an instance of the given named <paramref name="serviceType"/>.
+            </summary>
+            <param name="serviceType">Type of object requested.</param><param name="key">Name the object was registered with.</param><exception cref="T:Microsoft.Practices.ServiceLocation.ActivationException">if there is an error resolving
+                        the service instance.</exception>
+            <returns>
+            The requested service instance.
+            </returns>
+        </member>
+        <member name="M:ProAceFx.StructureMap.StructureMapServiceLocator.GetAllInstances(System.Type)">
+            <summary>
+            Get all instances of the given <paramref name="serviceType"/> currently
+                        registered in the container.
+            </summary>
+            <param name="serviceType">Type of object requested.</param><exception cref="T:Microsoft.Practices.ServiceLocation.ActivationException">if there is are errors resolving
+                        the service instance.</exception>
+            <returns>
+            A sequence of instances of the requested <paramref name="serviceType"/>.
+            </returns>
+        </member>
+        <member name="M:ProAceFx.StructureMap.StructureMapServiceLocator.GetInstance``1">
+            <summary>
+            Get an instance of the given <typeparamref name="TService"/>.
+            </summary>
+            <typeparam name="TService">Type of object requested.</typeparam><exception cref="T:Microsoft.Practices.ServiceLocation.ActivationException">if there is are errors resolving
+                        the service instance.</exception>
+            <returns>
+            The requested service instance.
+            </returns>
+        </member>
+        <member name="M:ProAceFx.StructureMap.StructureMapServiceLocator.GetInstance``1(System.String)">
+            <summary>
+            Get an instance of the given named <typeparamref name="TService"/>.
+            </summary>
+            <typeparam name="TService">Type of object requested.</typeparam><param name="key">Name the object was registered with.</param><exception cref="T:Microsoft.Practices.ServiceLocation.ActivationException">if there is are errors resolving
+                        the service instance.</exception>
+            <returns>
+            The requested service instance.
+            </returns>
+        </member>
+        <member name="M:ProAceFx.StructureMap.StructureMapServiceLocator.GetAllInstances``1">
+            <summary>
+            Get all instances of the given <typeparamref name="TService"/> currently
+                        registered in the container.
+            </summary>
+            <typeparam name="TService">Type of object requested.</typeparam><exception cref="T:Microsoft.Practices.ServiceLocation.ActivationException">if there is are errors resolving
+                        the service instance.</exception>
+            <returns>
+            A sequence of instances of the requested <typeparamref name="TService"/>.
+            </returns>
+        </member>
+        <member name="T:ProAceFx.StructureMap.Settings.DefaultSettingsRegistry">
+            <summary>
+            Provides a default registration mechanism for settings classes.
+            </summary>
+        </member>
+        <member name="M:ProAceFx.StructureMap.Settings.DefaultSettingsRegistry.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ProAceFx.StructureMap.Settings.DefaultSettingsRegistry"/> class using
+            the default registration convention.
+            </summary>
+        </member>
+    </members>
+</doc>

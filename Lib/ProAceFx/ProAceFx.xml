@@ -1,0 +1,365 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProAceFx</name>
+    </assembly>
+    <members>
+        <member name="T:ProAceFx.Visitors.IPropertyInfoProvider">
+            <summary>
+            Provides a mechanism for retrieving property metadata for types.
+            </summary>
+        </member>
+        <member name="M:ProAceFx.Visitors.IPropertyInfoProvider.GetProperties``1(``0)">
+            <summary>
+            Retrieves a collection of property metadata objects for the specified instance of <typeparamref name="TInstance"/>.
+            </summary>
+            <typeparam name="TInstance">The type of instance to analyze.</typeparam>
+            <param name="instance">The instance to analyze.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProAceFx.Visitors.IPropertyInfoProvider.GetProperties(System.Type)">
+            <summary>
+            Retrieves a collection of property metadata objects for the specified type.
+            </summary>
+            <param name="targetType">The typeto analyze.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ProAceFx.Settings.EnvironmentalVariableProvider">
+            <summary>
+            Provides access to environmental variables.
+            </summary>
+        </member>
+        <member name="T:ProAceFx.Settings.IEnvironmentalVariableProvider">
+            <summary>
+            Provides access to environmental variables.
+            </summary>
+        </member>
+        <member name="M:ProAceFx.Settings.IEnvironmentalVariableProvider.ExpandEnvironmentalVariables(System.String)">
+            <summary>
+            Expands all environmental variables within the specified input.
+            </summary>
+            <param name="input">The string to expand.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProAceFx.Settings.EnvironmentalVariableProvider.ExpandEnvironmentalVariables(System.String)">
+            <summary>
+            Expands all environmental variables within the specified input.
+            </summary>
+            <param name="input">The string to expand.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ProAceFx.Visitors.IPropertyVisitor">
+            <summary>
+            Provides a decorator for objects to visits properties.
+            </summary>
+        </member>
+        <member name="M:ProAceFx.Visitors.IPropertyVisitor.Visit``1(``0)">
+            <summary>
+            Instructs the visitor to visit the specified instance. of <typeparamref name="TInstance"/>.
+            </summary>
+            <typeparam name="TInstance">Type of instance to visit.</typeparam>
+            <param name="instance">The instance to visit.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ProAceFx.Visitors.BasePropertyWithAttributeVisitor`1">
+            <summary>
+            Provides a base class for property visitors that require attributes.
+            </summary>
+            <typeparam name="TAttribute">The type of attribute to require.</typeparam>
+        </member>
+        <member name="T:ProAceFx.Visitors.BasePropertyVisitor">
+            <summary>
+            Provides a base class for property visitors.
+            </summary>
+        </member>
+        <member name="M:ProAceFx.Visitors.BasePropertyVisitor.#ctor(ProAceFx.Visitors.IPropertyInfoProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ProAceFx.Visitors.BasePropertyVisitor"/> class with the specified provider.
+            </summary>
+            <param name="propertyProvider">The property provider.</param>
+        </member>
+        <member name="M:ProAceFx.Visitors.BasePropertyVisitor.GetAttribute``1(ProAceFx.Visitors.IPropertyInfo)">
+            <summary>
+            Gets the specified attribute type for the property.
+            </summary>
+            <typeparam name="TAttribute">Type of attribute to retrieve.</typeparam>
+            <param name="property">The property.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProAceFx.Visitors.BasePropertyVisitor.SetPropertyValue(ProAceFx.Visitors.IPropertyInfo,System.Object,System.Object)">
+            <summary>
+            Sets the value of the specified property.
+            </summary>
+            <param name="property">The property to set.</param>
+            <param name="instance">The instance to set.</param>
+            <param name="value">The value to set.</param>
+        </member>
+        <member name="M:ProAceFx.Visitors.BasePropertyVisitor.Visit``1(``0)">
+            <summary>
+            Instructs the visitor to visit the specified instance. of <typeparamref name="TInstance"/>.
+            </summary>
+            <typeparam name="TInstance">Type of instance to visit.</typeparam>
+            <param name="instance">The instance to visit.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProAceFx.Visitors.BasePropertyVisitor.Visit``1(System.Collections.Generic.IEnumerable{ProAceFx.Visitors.IPropertyInfo},``0)">
+            <summary>
+            When overriden in a child class, visits all of the specified properties on the specified instance.
+            </summary>
+            <typeparam name="TInstance">Type of instance to visit.</typeparam>
+            <param name="properties">The sets of properties to visit.</param>
+            <param name="instance">The associated instance.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProAceFx.Visitors.BasePropertyWithAttributeVisitor`1.#ctor(ProAceFx.Visitors.IPropertyInfoProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ProAceFx.Visitors.BasePropertyWithAttributeVisitor`1"/> class.
+            </summary>
+            <param name="propertyProvider">The property provider.</param>
+        </member>
+        <member name="M:ProAceFx.Visitors.BasePropertyWithAttributeVisitor`1.Visit``1(System.Collections.Generic.IEnumerable{ProAceFx.Visitors.IPropertyInfo},``0)">
+            <summary>
+            When overriden in a child class, visits all of the specified properties on the specified instance.
+            </summary>
+            <typeparam name="TInstance">Type of instance to visit.</typeparam>
+            <param name="properties">The sets of properties to visit.</param>
+            <param name="instance">The associated instance.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProAceFx.Visitors.BasePropertyWithAttributeVisitor`1.Visit``1(`0,ProAceFx.Visitors.IPropertyInfo,``0)">
+            <summary>
+            When overriden in a child class, visits all of the specified properties on the specified instance.
+            </summary>
+            <typeparam name="TInstance">Type of instance to visit.</typeparam>
+            <param name="attribute">The associated attribute.</param>
+            <param name="property">The sets of property to visit.</param>
+            <param name="instance">The associated instance.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ProAceFx.Visitors.ReflectionPropertyInfoProvider">
+            <summary>
+            Provides a mechanism for retrieving property metadata for types via reflection.
+            </summary>
+        </member>
+        <member name="M:ProAceFx.Visitors.ReflectionPropertyInfoProvider.GetProperties``1(``0)">
+            <summary>
+            Retrieves a collection of property metadata objects for the specified instance of <typeparamref name="TInstance"/>.
+            </summary>
+            <typeparam name="TInstance">The type of instance to analyze.</typeparam>
+            <param name="instance">The instance to analyze.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProAceFx.Visitors.ReflectionPropertyInfoProvider.GetProperties(System.Type)">
+            <summary>
+            Retrieves a collection of property metadata objects for the specified type.
+            </summary>
+            <param name="targetType">The typeto analyze.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ProAceFx.Settings.ExpandEnvironmentalVariableAttribute">
+            <summary>
+            Marks a property as containing environmental variables that will be automatically substituted.
+            </summary>
+        </member>
+        <member name="T:ProAceFx.Visitors.PropertyInfoAdapter">
+            <summary>
+             Provides an adapter for the <see cref="T:System.Reflection.PropertyInfo"/> class.
+            </summary>
+        </member>
+        <member name="T:ProAceFx.Visitors.IPropertyInfo">
+            <summary>
+            Discovers the attributes of a property and provides access to property metadata.
+            </summary>
+        </member>
+        <member name="M:ProAceFx.Visitors.IPropertyInfo.GetValue(System.Object,System.Object[])">
+            <summary>
+            Gets the value of the property.
+            </summary>
+            <param name="instance">The associated instance.</param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProAceFx.Visitors.IPropertyInfo.SetValue(System.Object,System.Object,System.Object[])">
+            <summary>
+            Sets the value of the property.
+            </summary>
+            <param name="instance">The associated instance.</param>
+            <param name="value">The value to set.</param>
+            <param name="index"></param>
+        </member>
+        <member name="M:ProAceFx.Visitors.IPropertyInfo.GetCustomAttributes(System.Type,System.Boolean)">
+            <summary>
+            Returns an array of the associated types.
+            </summary>
+            <param name="attributeType"></param>
+            <param name="inherit"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ProAceFx.Visitors.IPropertyInfo.Name">
+            <summary>
+            Gets the name of the property.
+            </summary>
+        </member>
+        <member name="P:ProAceFx.Visitors.IPropertyInfo.PropertyType">
+            <summary>
+            Gets the type of the property.
+            </summary>
+        </member>
+        <member name="M:ProAceFx.Visitors.PropertyInfoAdapter.#ctor(System.Reflection.PropertyInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ProAceFx.Visitors.PropertyInfoAdapter"/> class from the 
+            specified <see cref="T:System.Reflection.PropertyInfo"/> instance.
+            </summary>
+            <param name="propertyInfo">The property info to adapt.</param>
+        </member>
+        <member name="M:ProAceFx.Visitors.PropertyInfoAdapter.GetValue(System.Object,System.Object[])">
+            <summary>
+            Gets the value of the property.
+            </summary>
+            <param name="instance">The associated instance.</param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ProAceFx.Visitors.PropertyInfoAdapter.SetValue(System.Object,System.Object,System.Object[])">
+            <summary>
+            Sets the value of the property.
+            </summary>
+            <param name="instance">The associated instance.</param>
+            <param name="value">The value to set.</param>
+            <param name="index"></param>
+        </member>
+        <member name="M:ProAceFx.Visitors.PropertyInfoAdapter.GetCustomAttributes(System.Type,System.Boolean)">
+            <summary>
+            Returns an array of the associated types.
+            </summary>
+            <param name="attributeType"></param>
+            <param name="inherit"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ProAceFx.Visitors.PropertyInfoAdapter.Name">
+            <summary>
+            Gets the name of the property.
+            </summary>
+        </member>
+        <member name="P:ProAceFx.Visitors.PropertyInfoAdapter.PropertyType">
+            <summary>
+            Gets the type of the property.
+            </summary>
+        </member>
+        <member name="T:ProAceFx.Settings.ISettingsProvider">
+            <summary>
+            Provides a mechanism for retrieving settings.
+            </summary>
+        </member>
+        <member name="M:ProAceFx.Settings.ISettingsProvider.GetSettings">
+            <summary>
+            Gets all settings.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ProAceFx.Settings.SettingsPropertyVisitor">
+            <summary>
+            Provides a decorating mechanism for POCO classes to provide configuration settings.
+            </summary>
+        </member>
+        <member name="M:ProAceFx.Settings.SettingsPropertyVisitor.#ctor(ProAceFx.Visitors.IPropertyInfoProvider,ProAceFx.Settings.ISettingsProvider,ProAceFx.Settings.ISettingKeyResolver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ProAceFx.Settings.SettingsPropertyVisitor"/> class.
+            </summary>
+            <param name="propertyProvider">The property provider.</param>
+            <param name="settingsProvider">The settings provider.</param>
+            <param name="resolver">The setting key resolver.</param>
+        </member>
+        <member name="M:ProAceFx.Settings.SettingsPropertyVisitor.Visit``1(System.Collections.Generic.IEnumerable{ProAceFx.Visitors.IPropertyInfo},``0)">
+            <summary>
+            When overriden in a child class, visits all of the specified properties on the specified instance.
+            </summary>
+            <typeparam name="TInstance">Type of instance to visit.</typeparam>
+            <param name="properties">The sets of properties to visit.</param>
+            <param name="instance">The associated instance.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ProAceFx.Settings.AppSettingsProvider">
+            <summary>
+            Provides a mechanism for retrieving settings through the .NET Configuration API.
+            </summary>
+        </member>
+        <member name="M:ProAceFx.Settings.AppSettingsProvider.GetSettings">
+            <summary>
+            Gets all settings.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ProAceFx.Settings.ISettingKeyResolver">
+            <summary>
+            Provides a mechanism for resolving keys for settings.
+            </summary>
+        </member>
+        <member name="M:ProAceFx.Settings.ISettingKeyResolver.Resolve(System.Type,System.String)">
+            <summary>
+            Resolves the key for the specific type.
+            </summary>
+            <param name="type">The type of settings class.</param>
+            <param name="key">The key being resolved.</param>
+            <returns></returns>
+        </member>
+        <member name="P:ProAceFx.Settings.ISettingKeyResolver.IsCaseSensitive">
+            <summary>
+            Gets a flag indicating whether the resolution is case sensitive.
+            </summary>
+        </member>
+        <member name="T:ProAceFx.Settings.ITypeConverter">
+            <summary>
+            Provides custom type conversion operations.
+            </summary>
+        </member>
+        <member name="M:ProAceFx.Settings.ITypeConverter.ConvertTo(System.Type,System.Object)">
+            <summary>
+            Converts the value to the specified destination type.
+            </summary>
+            <param name="destinationType">The type to convert to.</param>
+            <param name="value">The value to convert.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ProAceFx.Settings.ExpandEnvironmentalVariablePropertyVisitor">
+            <summary>
+            Provides a mechanism for automatically expanding environmental variables.
+            </summary>
+        </member>
+        <member name="M:ProAceFx.Settings.ExpandEnvironmentalVariablePropertyVisitor.#ctor(ProAceFx.Visitors.IPropertyInfoProvider,ProAceFx.Settings.IEnvironmentalVariableProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ProAceFx.Settings.ExpandEnvironmentalVariablePropertyVisitor"/> class.
+            </summary>
+            <param name="propertyProvider">The property provider.</param>
+            <param name="environmentalVariableProvider">The environmental variable provider.</param>
+        </member>
+        <member name="M:ProAceFx.Settings.ExpandEnvironmentalVariablePropertyVisitor.Visit``1(ProAceFx.Settings.ExpandEnvironmentalVariableAttribute,ProAceFx.Visitors.IPropertyInfo,``0)">
+            <summary>
+            When overriden in a child class, visits all of the specified properties on the specified instance.
+            </summary>
+            <typeparam name="TInstance">Type of instance to visit.</typeparam>
+            <param name="attribute">The associated attribute.</param>
+            <param name="property">The sets of property to visit.</param>
+            <param name="instance">The associated instance.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ProAceFx.Settings.ClassPrefixSettingKeyResolver">
+            <summary>
+            Provides a mechanism for resolving keys for settings by prefixing the setting with the class name (i.e., "MyClass.MyProperty").
+            </summary>
+        </member>
+        <member name="M:ProAceFx.Settings.ClassPrefixSettingKeyResolver.Resolve(System.Type,System.String)">
+            <summary>
+            Resolves the key for the specific type.
+            </summary>
+            <param name="type">The type of settings class.</param>
+            <param name="key">The key being resolved.</param>
+            <returns></returns>
+        </member>
+        <member name="P:ProAceFx.Settings.ClassPrefixSettingKeyResolver.IsCaseSensitive">
+            <summary>
+            Gets a flag indicating whether the resolution is case sensitive.
+            </summary>
+        </member>
+    </members>
+</doc>

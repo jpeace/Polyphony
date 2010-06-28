@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<Test name="Verifying Users" lifecycle="Acceptance">
+  <Console>
+    <OpenUrl isStep="True" url="http://localhost:60691/users/list" />
+  </Console>
+  <Users>
+    <MakeSureThatUserIsListed isStep="True" firstName="Josh" />
+  </Users>
+</Test>

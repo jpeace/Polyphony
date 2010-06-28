@@ -2,10 +2,9 @@
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using Polyphony.Core.Infrastructure;
+using Polyphony.Core.NHibernate.Conventions;
 using Polyphony.Core.NHibernate.Mappings;
-using Polyphony.Core.NHibernate.Repositories;
 using Polyphony.Infrastructure;
-using Polyphony.Repositories;
 using StructureMap.Configuration.DSL;
 
 namespace Polyphony.Core.Configuration
@@ -23,7 +22,11 @@ namespace Polyphony.Core.Configuration
 			//TODO: Configurable connection string? (ISettingsProvider)
             var sessionFactory = Fluently.Configure()
                 .Database(MsSqlConfiguration.MsSql2008.ConnectionString(c => c.FromConnectionStringWithKey("Polyphony")))
-                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<MapMarker>())
+                .Mappings(m =>
+                              {
+                                  m.FluentMappings.AddFromAssemblyOf<MapMarker>();
+                                  m.FluentMappings.Conventions.AddFromAssemblyOf<ConventionMarker>();
+                              })
 				.ExposeConfiguration(cfg => For<global::NHibernate.Cfg.Configuration>().Singleton().Use(cfg))
                 .BuildSessionFactory();
 

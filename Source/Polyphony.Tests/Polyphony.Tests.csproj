@@ -115,6 +115,8 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -130,6 +132,7 @@
     <Compile Include="Persistance\UnitOfWorkTester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Web\Endpoints\Users\when_listing_users.cs" />
+    <Compile Include="Web\Policies\when_building_endpoint_urls.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InteractionContext.cs" />

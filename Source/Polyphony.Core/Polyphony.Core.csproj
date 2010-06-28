@@ -112,6 +112,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\InfrastructureRegistry.cs" />
     <Compile Include="Configuration\CoreRegistry.cs" />
     <Compile Include="Configuration\RepositoryRegistry.cs" />
     <Compile Include="Configuration\NHibernateRegistry.cs" />

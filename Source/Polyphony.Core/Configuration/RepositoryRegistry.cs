@@ -10,7 +10,7 @@ namespace Polyphony.Core.Configuration
 	public class RepositoryRegistry : Registry
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="NHibernateRegistry"/> class.
+        /// Initializes a new instance of the <see cref="RepositoryRegistry"/> class.
 		/// </summary>
         public RepositoryRegistry()
 		{
